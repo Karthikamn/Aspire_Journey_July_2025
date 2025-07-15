@@ -6,6 +6,8 @@ on:
   push:
     branches-ignore:
       - master
+    branches:
+      - feature/f1
 jobs:
   build: # job name
     runs-on: ubuntu-latest   # github hosted runner
