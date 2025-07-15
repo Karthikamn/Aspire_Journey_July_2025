@@ -6,13 +6,14 @@ on:
  push   # event
  
 jobs:
-  echo-statement: # job name
+  build: # job name
     runs-on: ubuntu-latest   # github hosted runner
     steps:
      - name: Echo 
        run: echo " Welcome to first workflow"
-  display-info:
-     runs-on: windows-latest
-     steps:
-        - name: Echo 
-          run: echo " Welcome to first workflow"
+  deploy:
+    needs: build
+    runs-on: windows-latest
+    steps:
+      - name: Echo 
+        run: echo " Welcome to first workflow"
