@@ -3,14 +3,14 @@ name: First Workflow
 
 # Trigger 
 on: 
- push   # event
- 
+  [push,pull_request]
 jobs:
   build: # job name
     runs-on: ubuntu-latest   # github hosted runner
     steps:
-     - name: Echo 
-       run: echo " Welcome to first workflow"
+     - name: code checkout
+       run: echo " Welcome"
+     - name: Setup 
   deploy:
     needs: build
     runs-on: windows-latest
