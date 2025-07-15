@@ -3,11 +3,10 @@ name: First Workflow
 
 # Trigger 
 on: 
-  push:
-    branches-ignore:
-      - master
-    branches:
-      - feature/f1
+  pull_request:
+    types:
+     - opened
+     - synchronize  
 jobs:
   build: # job name
     runs-on: ubuntu-latest   # github hosted runner
