@@ -11,6 +11,7 @@ jobs:
      - name: code checkout
        run: echo " Welcome"
      - name: Setup 
+       run: echo " Second step"
   deploy:
     needs: build
     runs-on: windows-latest
