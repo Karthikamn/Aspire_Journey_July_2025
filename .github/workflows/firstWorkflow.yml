@@ -3,12 +3,7 @@ name: First Workflow
 
 # Trigger 
 on: 
-
- push:
-    branches:
-      - master
-
-  pull_request:
+ pull_request:
     types:
      - opened
      - synchronize  
