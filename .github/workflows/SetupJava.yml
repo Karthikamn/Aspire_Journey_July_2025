@@ -7,8 +7,8 @@ jobs:
  setup-java:
   runs-on: ubuntu-latest
   steps: 
-     - name: Setup Java JDK
-       uses: actions/setup-java@v3.14.1
-       with:
-         java-version: '17'
-         distribution: microsoft
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v3.9.1
+        with:
+          node-version: '22'
+
