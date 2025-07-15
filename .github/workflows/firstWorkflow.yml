@@ -4,7 +4,7 @@ name: First Workflow
 # Trigger 
 on: 
   push:
-    branches:
+    branches-ignore:
       - master
 jobs:
   build: # job name
