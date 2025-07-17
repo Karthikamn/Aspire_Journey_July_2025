@@ -21,3 +21,6 @@ jobs:
     if: ${{ failure() }}
     steps:
       - run: echo "Failed to build and deploy"
+      - name: I will be success
+        if: ${{failure()}}
+        run: echo "I will print if first step is failed"
