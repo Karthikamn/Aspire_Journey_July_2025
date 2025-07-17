@@ -1,14 +1,14 @@
 name: Reusable Workflow
 
 on:
- workflow_call:
-  inputs:
-    environment:
-    required: true
-    type: string
-  secrets:
-   MY_SECRET:
-     required: true
+  workflow_call:
+   inputs:
+     environment:
+      required: true
+      type: string
+   secrets:
+     MY_SECRET:
+      required: true
 jobs:
  echo-hello:
   runs-on: ubuntu-latest
