@@ -19,6 +19,6 @@ jobs:
       echo 'sha value ${{github.sha}}'
       echo 'Run details ${{github.run_id}}'
       echo 'Runner number details ${{github.run_number}}'
-      echo 'Env value is ${{vars.MY_VAR}}'
+      echo 'Username is ${{secrets.USERNAME}}'
       
      
