@@ -1,4 +1,4 @@
-name: Github Env Context
+name: Github Env secrets Vars Matrix Context
 
 env:
  MY_VAR: 'Workflow'
@@ -8,7 +8,12 @@ jobs:
  Context:
   env:
    MY_VAR: 'jobs'
-  runs-on: ubuntu-latest
+  strategy:
+   matrix:
+     os: 
+       - ubuntu-latest
+       - windows-latest
+  runs-on: ${{matrix.os}}
   steps:
    - name: Print 
    
