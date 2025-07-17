@@ -14,4 +14,4 @@ jobs:
   runs-on: ubuntu-latest
   steps:
    - run: echo "Run in ${{inputs.environment}}"
-   - run: echo "Secret is ${{secret.MY_SECRET}}"
+   - run: echo "Secret is ${{secrets.MY_SECRET}}"
