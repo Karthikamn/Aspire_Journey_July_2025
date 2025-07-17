@@ -24,3 +24,9 @@ jobs:
       - name: I will be success
         if: ${{failure()}}
         run: echo "I will print if first step is failed"
+      -  run: |
+          if [[ ${{github.ref }} == 'refs/head/master']]; then
+           echo " delpoy" >>$GITHUB_OUTPUT
+          else
+           echo " not to deploy" >>$GITHUB_OUTPUT
+          fi
