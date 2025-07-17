@@ -1,11 +1,23 @@
-name: Output Context
+name: Build and deploy
+on: push
 
-on: 
- workflow_dispatch
 jobs:
- example:
-  runs-on: ubuntu-latest
-  steps:
-   - id: greeting
-     run: echo "message=Hello welcome" >> $GITHUB_OUTPUT
-   - run: echo "Output value is ${{steps.greeting.outputs.message}}"
+  build:
+    runs-on: ubuntu-latest
+    outputs:
+      build_id: ${{ steps.build_step.outputs.build_id }}
+    steps:
+      - name: Build
+        id: build_step
+        run: echo "build_id=$RANDOM" >> $GITHUB_OUTPUT
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Deploying build ${{ needs.build.outputs.build_id }}"
+  debug:
+    needs: [build, deploy]
+    runs-on: ubuntu-latest
+    if: ${{ failure() }}
+    steps:
+      - run: echo "Failed to build and deploy"
