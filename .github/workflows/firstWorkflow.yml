@@ -3,10 +3,7 @@ name: First Workflow
 
 # Trigger 
 on: 
- pull_request:
-    types:
-     - opened
-     - synchronize  
+ workflow_dispatch
 
 jobs:
   build: # job name
@@ -15,7 +12,7 @@ jobs:
      - name: code checkout
        run: echo " Welcome"
      - name: Setup 
-       run: echo " Second step"
+       run: exit 1
   deploy:
     needs: build
     runs-on: windows-latest
