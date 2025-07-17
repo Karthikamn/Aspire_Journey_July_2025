@@ -11,8 +11,7 @@ jobs:
   runs-on: ubuntu-latest
   steps:
    - name: Print 
-     env:
-      MY_VAR: 'steps'
+   
      run: |
       echo 'Actor ${{github.actor}}'
       echo 'Event ${{github.event_name}}'
