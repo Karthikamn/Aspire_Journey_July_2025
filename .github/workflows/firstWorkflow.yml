@@ -1,9 +1,15 @@
 # Name of the workflow
 name: First Workflow
 
+run-name: DEBUG| ${{inputs.debug}}
+
 # Trigger 
 on: 
- workflow_dispatch
+ workflow_dispatch:
+  inputs:
+   debug:
+    type: boolean
+    default: false
 
 jobs:
   build: # job name
