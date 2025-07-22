@@ -1,0 +1,16 @@
+name: Setup Node
+
+on:
+ workflow_dispatch
+
+jobs:
+ setup-node:
+  
+   
+  runs-on: self-hosted
+  steps: 
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v3.9.1
+        with:
+          node-version: 22
+
